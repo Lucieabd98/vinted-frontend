@@ -1,0 +1,218 @@
+/* ============== GENERAL =========== */
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+/* ============== HEADER =========== */
+
+header {
+  position: sticky;
+  top: 1px;
+  background-color: white;
+}
+
+header img {
+  height: 45px;
+}
+
+header .container {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.right-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+header .right-buttons button {
+  padding: 5px 25px;
+  border: 1px solid #2cb1ba;
+  background-color: white;
+  color: #2cb1ba;
+  border-radius: 5px;
+}
+
+header button.sell,
+.buy-offer {
+  padding: 5px 20px;
+  border: 1px solid #2cb1ba;
+  background-color: #2cb1ba;
+  color: white;
+  border-radius: 5px;
+}
+
+header input {
+  border: none;
+
+  background-color: #f5f6f7;
+  height: 37px;
+  width: 590px;
+  padding: 5px 25px;
+  border-radius: 5px;
+}
+
+/* =========== MAIN =========== */
+
+.top-offer .userimg {
+  height: 20px;
+  width: 20px;
+  object-fit: contain;
+}
+
+main .heroimg img {
+  width: 100%;
+  height: 455px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.home-offers {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px auto auto;
+  width: 100%;
+  gap: 13px;
+  /* border: red 1px solid; */
+}
+
+.one-offer {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  width: 235px;
+  display: flex;
+  padding: 0 6px 20px;
+}
+
+main img {
+  height: 360px;
+  width: 235px;
+  object-fit: cover;
+}
+
+.product-details {
+  flex-direction: column;
+  display: flex;
+  padding: 8px;
+  gap: 7px;
+}
+
+.product-details > p:not(:first-child) {
+  font-size: 14px;
+  line-height: 10px;
+  color: #999999;
+  font-weight: 300;
+}
+
+.product-details > p:first-child {
+  font-weight: 300;
+}
+
+.top-offer {
+  display: flex;
+  gap: 10px;
+  color: #999999;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.one-offer img {
+  width: 235px;
+  height: 360px;
+  object-fit: cover;
+}
+
+/* ====== OFFER ========= */
+
+.offer-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.selected-offer {
+  background-color: #ebedee;
+  font-family: "Inter", sans-serif;
+  padding: 30px;
+}
+
+.offer-infos {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 420px;
+  padding: 40px;
+  /* border-radius: 5px; */
+}
+
+.offer-infos .price {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.offer-infos .offer-general {
+  font-size: 14px;
+}
+
+.offer-description p {
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.selected-offer img {
+  height: 600px;
+  object-fit: cover;
+}
+
+.user-info {
+  display: flex;
+  gap: 10px;
+}
+
+.divider {
+  color: #999999;
+}
+
+.offer-description p:first-child {
+  font-weight: 500;
+}
+
+.offer-description p:nth-child(2) {
+  color: #666666;
+}
+
+.offer-description .user-info p {
+  color: black;
+}
+
+.offer-description .user-info {
+  display: flex;
+  align-items: center;
+}
+
+.offer-description img {
+  height: 30px;
+}
+
+.buy-offer {
+  width: 100%;
+  padding: 10px;
+}
