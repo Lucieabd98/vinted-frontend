@@ -21,8 +21,12 @@ const Header = () => {
           </div>
 
           <div className="right-buttons">
-            <button>S'inscrire</button>
-            <button>Se connecter</button>
+            <Link to={"/signup"}>
+              <button>S'inscrire</button>
+            </Link>
+            <Link to={"/login"}>
+              <button>Se connecter</button>
+            </Link>
           </div>
           <button className="sell">Vends tes articles</button>
         </div>

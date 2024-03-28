@@ -51,7 +51,8 @@ header .right-buttons button {
 }
 
 header button.sell,
-.buy-offer {
+.buy-offer,
+.signup {
   padding: 5px 20px;
   border: 1px solid #2cb1ba;
   background-color: #2cb1ba;
@@ -215,4 +216,75 @@ main img {
 .buy-offer {
   width: 100%;
   padding: 10px;
+}
+
+/* ======= SIGNUP =========== */
+
+.sign-up h2 {
+  font-size: 24px;
+}
+
+.sign-up {
+  margin: 0 auto;
+  margin-top: 40px;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 275px;
+}
+
+.sign-up > input {
+  border: none;
+  border-bottom: 1px solid #fcced3;
+  height: 35px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.newsletter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  color: #666666;
+}
+
+.newsletter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.newsletter-checkbox > input {
+  transform: scale(2);
+}
+
+p.conditions {
+  font-size: 12px;
+  color: #999999;
+  text-align: center;
+  line-height: 15px;
+}
+
+div.button-signup {
+  width: 100%;
+}
+
+button.signup {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.to-login {
+  color: #2cb1ba;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
 }
