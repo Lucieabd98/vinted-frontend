@@ -22,7 +22,7 @@ a {
 
 header {
   position: sticky;
-  top: 1px;
+  top: 0px;
   background-color: white;
 }
 
@@ -68,6 +68,14 @@ header input {
   width: 590px;
   padding: 5px 25px;
   border-radius: 5px;
+}
+
+.deconnect {
+  border: solid 1px #c2175b;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 20px;
+  background-color: #c2175b;
 }
 
 /* =========== MAIN =========== */
@@ -222,6 +230,7 @@ main img {
 
 .sign-up h2 {
   font-size: 24px;
+  font-weight: 300;
 }
 
 .sign-up {
@@ -278,13 +287,63 @@ div.button-signup {
 button.signup {
   width: 100%;
   padding: 12px;
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 20px;
 }
 
-.to-login {
+.to-login,
+.to-signup {
   color: #2cb1ba;
   font-size: 12px;
   display: flex;
   justify-content: center;
+}
+
+/* ======== LOGIN ========= */
+
+.login {
+  margin: 0 auto;
+  margin-top: 40px;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: 275px;
+}
+
+.login h2 {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.login > input {
+  border: none;
+  border-bottom: 1px solid #fcced3;
+  height: 35px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  width: 100%;
+}
+
+button.login {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+.button-login {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.button-login button {
+  border: 1px solid #2cb1ba;
+  background-color: #2cb1ba;
+  color: white;
+  border-radius: 5px;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 20px;
 }

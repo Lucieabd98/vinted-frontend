@@ -1,7 +1,9 @@
 import logovinted from "../imgs/vinted-logo.png";
 import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
 
-const Header = () => {
+const Header = ({ token, handleToken }) => {
+  console.log(token);
   return (
     <>
       <header>
@@ -20,14 +22,30 @@ const Header = () => {
             ></input>
           </div>
 
-          <div className="right-buttons">
-            <Link to={"/signup"}>
-              <button>S'inscrire</button>
-            </Link>
-            <Link to={"/login"}>
-              <button>Se connecter</button>
-            </Link>
-          </div>
+          {!token ? (
+            <>
+              <div className="right-buttons">
+                <Link to={"/signup"}>
+                  <button>S'inscrire</button>
+                </Link>
+                <Link to={"/login"}>
+                  <button>Se connecter</button>
+                </Link>
+              </div>
+            </>
+          ) : (
+            <div>
+              <button
+                className="deconnect"
+                onClick={() => {
+                  handleToken(null);
+                }}
+              >
+                Se déconnecter
+              </button>
+            </div>
+          )}
+
           <button className="sell">Vends tes articles</button>
         </div>
       </header>

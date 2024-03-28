@@ -4,7 +4,7 @@ import { useState } from "react";
 // import { useParams } from "react-router-dom";
 
 const Signup = () => {
-  const [userName, setUserName] = useState("");
+  const [username, setUserName] = useState("");
   // console.log(userName);
 
   const [email, setEmail] = useState("");
@@ -21,15 +21,15 @@ const Signup = () => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        `https://site--backend-vinted--txtnrrwcytwl.code.run/user/signup`,
+        "https://site--backend-vinted--txtnrrwcytwl.code.run/user/signup",
         {
-          userName,
+          username,
           email,
           password,
           newsletter,
         }
       );
-      console.log(response.message);
+      console.log(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -40,10 +40,10 @@ const Signup = () => {
       <form className="sign-up" onSubmit={handleSumbit}>
         <h2>S'inscrire</h2>
         <input
-          name={userName}
+          name={username}
           type="text"
           placeholder="Nom d'utilisateur"
-          value={userName}
+          value={username}
           onChange={(event) => {
             setUserName(event.target.value);
           }}
