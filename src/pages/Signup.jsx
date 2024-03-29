@@ -1,9 +1,12 @@
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 // import { useParams } from "react-router-dom";
 
-const Signup = () => {
+const Signup = ({ handleToken }) => {
+  const navigate = useNavigate();
+
   const [username, setUserName] = useState("");
   // console.log(userName);
 
@@ -29,7 +32,8 @@ const Signup = () => {
           newsletter,
         }
       );
-      console.log(response.data);
+      handleToken(response.data.token);
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
