@@ -15,7 +15,7 @@ const Offer = () => {
       `https://site--backend-vinted--txtnrrwcytwl.code.run/offers/`
     );
 
-    console.log(response.data);
+    // console.log(response.data);
     setData(response.data);
     setIsLoading(false);
   };
@@ -29,7 +29,7 @@ const Offer = () => {
     <>
       {data.offers.map((offer) => {
         if (offer._id === id) {
-          console.log(offer);
+          // console.log(offer);
           return (
             <>
               <div key={offer.id} className="selected-offer">
@@ -40,11 +40,26 @@ const Offer = () => {
                   <div className="offer-infos">
                     <div className="offer-general">
                       <p className="price">{offer.product_price} €</p>
-                      <p>MARQUE {offer.product_details[0].MARQUE}</p>
-                      <p>TAILLE {offer.product_details[1].TAILLE}</p>
-                      <p>ETAT {offer.product_details[2].ÉTAT}</p>
-                      <p>COULEUR {offer.product_details[3].COULEUR}</p>
-                      <p>EMPLACEMENT {offer.product_details[4].EMPLACEMENT}</p>
+                      <p>
+                        <span>{Object.keys(offer.product_details[0])}</span>
+                        <span>{offer.product_details[0].MARQUE}</span>
+                      </p>
+                      <p>
+                        <span>{Object.keys(offer.product_details[1])}</span>
+                        <span>{offer.product_details[1].TAILLE}</span>
+                      </p>
+                      <p>
+                        <span>{Object.keys(offer.product_details[2])}</span>
+                        <span>{offer.product_details[2].ÉTAT}</span>
+                      </p>
+                      <p>
+                        <span>{Object.keys(offer.product_details[3])}</span>
+                        <span> {offer.product_details[3].COULEUR}</span>
+                      </p>
+                      <p>
+                        <span>{Object.keys(offer.product_details[4])}</span>
+                        <span>{offer.product_details[4].EMPLACEMENT}</span>
+                      </p>
                     </div>
                     <div>
                       <p className="divider">
@@ -56,7 +71,14 @@ const Offer = () => {
                       <p>{offer.product_description}</p>
                       <div className="user-info">
                         <p>
-                          <img src={userimg} alt="" />
+                          {offer.owner.account.avatar ? (
+                            <img
+                              src={offer.owner.account.avatar.secure_url}
+                              alt="avatar de l'utilisateur"
+                            />
+                          ) : (
+                            <img src={userimg} />
+                          )}
                         </p>
                         <p>{offer.owner.account.username}</p>
                       </div>

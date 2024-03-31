@@ -13,6 +13,10 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 
 function App() {
+  const [input, setInput] = useState("");
+  const [range, setRange] = useState([10, 100]);
+  const [sortPrice, setSortPrice] = useState(false);
+
   const [token, setToken] = useState(Cookies.get("token") || null);
   console.log(token);
 
@@ -29,9 +33,21 @@ function App() {
   return (
     <>
       <Router>
-        <Header token={token} handleToken={handleToken} />
+        <Header
+          token={token}
+          handleToken={handleToken}
+          input={input}
+          setInput={setInput}
+          range={range}
+          setRange={setRange}
+          sortPrice={sortPrice}
+          setSortPrice={setSortPrice}
+        />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={<Home input={input} range={range} sortPrice={sortPrice} />}
+          />
           <Route path="/offer/:id" element={<Offer />} />
           <Route
             path="/signup"

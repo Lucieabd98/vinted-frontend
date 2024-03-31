@@ -1,9 +1,22 @@
 import logovinted from "../imgs/vinted-logo.png";
-import { Link } from "react-router-dom";
-import Cookies from "js-cookie";
+import { Link, useNavigate } from "react-router-dom";
+import SearchInput from "./SearchInput";
+import RangeInput from "./RangeInput";
+import SwitchButton from "./SwitchButton";
 
-const Header = ({ token, handleToken }) => {
+const Header = ({
+  token,
+  handleToken,
+  input,
+  setInput,
+  range,
+  setRange,
+  sortPrice,
+  setSortPrice,
+}) => {
   console.log(token);
+  const navigate = useNavigate();
+
   return (
     <>
       <header>
@@ -15,11 +28,11 @@ const Header = ({ token, handleToken }) => {
           </Link>
 
           <div>
-            <input
-              type="text"
-              placeholder="Recherche des articles"
-              name="recherche"
-            ></input>
+            <SearchInput input={input} setInput={setInput} />
+            <div className="filters">
+              <SwitchButton sortPrice={sortPrice} setSortPrice={setSortPrice} />
+              <RangeInput range={range} setRange={setRange} />
+            </div>
           </div>
 
           {!token ? (
@@ -39,6 +52,7 @@ const Header = ({ token, handleToken }) => {
                 className="deconnect"
                 onClick={() => {
                   handleToken(null);
+                  navigate("/");
                 }}
               >
                 Se déconnecter
