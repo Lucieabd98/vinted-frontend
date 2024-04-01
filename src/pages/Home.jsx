@@ -13,8 +13,10 @@ const Home = ({
   setToHide,
   pageNumber,
   setPageNumber,
+  setMaxOffer,
+  maxPages,
 }) => {
-  const limitKey = 15;
+  const limitKey = 10;
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -33,8 +35,9 @@ const Home = ({
         "&page=" +
         pageNumber
     );
-    // console.log(response.data);
+    // console.log(response.data.count);
     setData(response.data);
+    setMaxOffer(response.data.count);
     setIsLoading(false);
   };
   useEffect(() => {
@@ -99,7 +102,11 @@ const Home = ({
               );
             })}
           </div>
-          <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} />
+          <Pagination
+            pageNumber={pageNumber}
+            setPageNumber={setPageNumber}
+            maxPages={maxPages}
+          />
         </div>
       </main>
     </>

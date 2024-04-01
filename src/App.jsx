@@ -34,6 +34,10 @@ function App() {
   console.log(token);
 
   const [pageNumber, setPageNumber] = useState(1);
+  const [maxOffer, setMaxOffer] = useState();
+
+  const maxPages = maxOffer - 15;
+  console.log(maxPages);
 
   const handleToken = (token) => {
     if (token) {
@@ -72,6 +76,9 @@ function App() {
                 setToHide={setToHide}
                 pageNumber={pageNumber}
                 setPageNumber={setPageNumber}
+                maxOffer={maxOffer}
+                setMaxOffer={setMaxOffer}
+                maxPages={maxPages}
               />
             }
           />

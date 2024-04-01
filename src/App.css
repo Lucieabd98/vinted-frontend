@@ -556,7 +556,18 @@ button.publish-offer {
   font-size: 15px;
 }
 
+/* ========= PAGINATION ============= */
+
 .pagination {
   display: flex;
   justify-content: center;
+}
+
+.pagination button {
+  padding: 5px 25px;
+  border: 1px solid #2cb1ba;
+  background-color: white;
+  color: #2cb1ba;
+  border-radius: 5px;
+  margin: 12px;
 }
