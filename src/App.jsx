@@ -33,6 +33,8 @@ function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
   console.log(token);
 
+  const [pageNumber, setPageNumber] = useState(1);
+
   const handleToken = (token) => {
     if (token) {
       Cookies.set("token", token, { expires: 10 });
@@ -68,6 +70,8 @@ function App() {
                 sortPrice={sortPrice}
                 sortingPrices={sortingPrices}
                 setToHide={setToHide}
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
               />
             }
           />

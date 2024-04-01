@@ -555,3 +555,8 @@ button.publish-offer {
   padding: 14px;
   font-size: 15px;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}

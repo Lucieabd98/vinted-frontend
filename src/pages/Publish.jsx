@@ -43,7 +43,7 @@ const Publish = ({ token, setToHide }) => {
           },
         }
       );
-      console.log(response.data);
+      // console.log(response.data);
       setPictureFromCloudinary(response.data.secure_url);
       setToHide(false);
       navigate("/");

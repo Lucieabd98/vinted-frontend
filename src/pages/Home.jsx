@@ -4,8 +4,17 @@ import { useState, useEffect } from "react";
 
 import heroimg from "../assets/imgs/heroimg.jpg";
 import userimg from "../assets/imgs/user-icon.png";
+import Pagination from "../assets/components/Pagination";
 
-const Home = ({ input, range, sortingPrices, setToHide }) => {
+const Home = ({
+  input,
+  range,
+  sortingPrices,
+  setToHide,
+  pageNumber,
+  setPageNumber,
+}) => {
+  const limitKey = 15;
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -18,7 +27,11 @@ const Home = ({ input, range, sortingPrices, setToHide }) => {
         "&priceMax=" +
         range[1] +
         "&sort=" +
-        sortingPrices
+        sortingPrices +
+        "&limit=" +
+        limitKey +
+        "&page=" +
+        pageNumber
     );
     // console.log(response.data);
     setData(response.data);
@@ -26,7 +39,7 @@ const Home = ({ input, range, sortingPrices, setToHide }) => {
   };
   useEffect(() => {
     fetchData();
-  }, [input, range, sortingPrices]);
+  }, [input, range, sortingPrices, pageNumber]);
 
   return isLoading ? (
     <span>En cours de chargement... </span>
@@ -86,6 +99,7 @@ const Home = ({ input, range, sortingPrices, setToHide }) => {
               );
             })}
           </div>
+          <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} />
         </div>
       </main>
     </>

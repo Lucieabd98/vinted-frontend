@@ -16,7 +16,7 @@ const Header = ({
   toHide,
   setToHide,
 }) => {
-  console.log(token);
+  // console.log(token);
   const navigate = useNavigate();
 
   return (
