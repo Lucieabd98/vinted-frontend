@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import Offer from "./pages/Offer";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Publish from "./pages/Publish";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
@@ -17,7 +18,7 @@ library.add(faArrowDown, faArrowUp);
 
 function App() {
   const [input, setInput] = useState("");
-  const [range, setRange] = useState([10, 100]);
+  const [range, setRange] = useState([10, 150]);
   const [sortPrice, setSortPrice] = useState(false);
   let sortingPrices = "";
 
@@ -66,6 +67,7 @@ function App() {
                 range={range}
                 sortPrice={sortPrice}
                 sortingPrices={sortingPrices}
+                setToHide={setToHide}
               />
             }
           />
@@ -77,6 +79,17 @@ function App() {
           <Route
             path="/login"
             element={<Login handleToken={handleToken} setToHide={setToHide} />}
+          />
+
+          <Route
+            path="/offer/publish"
+            element={
+              token ? (
+                <Publish token={token} setToHide={setToHide} />
+              ) : (
+                <Login handleToken={handleToken} setToHide={setToHide} />
+              )
+            }
           />
         </Routes>
       </Router>

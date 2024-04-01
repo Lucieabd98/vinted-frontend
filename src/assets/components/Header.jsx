@@ -24,7 +24,11 @@ const Header = ({
       <header>
         <div className="container">
           <Link to={"/"}>
-            <div>
+            <div
+              onClick={() => {
+                setToHide(false);
+              }}
+            >
               <img src={logovinted} alt="logo vinted" />
             </div>
           </Link>
@@ -78,8 +82,16 @@ const Header = ({
               </button>
             </div>
           )}
-
-          <button className="sell">Vends tes articles</button>
+          <Link to="/offer/publish">
+            <button
+              className="sell"
+              onClick={() => {
+                setToHide(true);
+              }}
+            >
+              Vends tes articles
+            </button>
+          </Link>
         </div>
       </header>
     </>

@@ -54,7 +54,8 @@ header .right-buttons button {
 header button.sell,
 .buy-offer,
 .signup,
-button.begin-to-sell {
+button.begin-to-sell,
+button.publish-offer {
   padding: 5px 20px;
   border: 1px solid #2cb1ba;
   background-color: #2cb1ba;
@@ -125,7 +126,7 @@ main .heroimg img {
 .top-offer .userimg {
   border-radius: 50%;
   height: 30px;
-  object-fit: contain;
+  object-fit: cover;
   width: 30px;
 }
 
@@ -264,6 +265,7 @@ main img {
 .user-info img {
   border-radius: 50%;
   height: 50px;
+  width: 50px;
   margin-right: 10px;
   object-fit: cover;
 }
@@ -462,4 +464,94 @@ button.login {
 .filters {
   display: flex;
   gap: 30px;
+}
+
+/* ========= PUBLISH =========== */
+
+.publish-offer h2 {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.background {
+  background-color: #ebedee;
+}
+
+.publish-offer {
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", sans-serif;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.form-offers {
+  display: flex;
+  flex-direction: column;
+  width: 1280px;
+}
+
+.form-offers > div:not(:last-child) {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 20px 0;
+  box-shadow: 0 0 2px gray;
+}
+
+.form-offers > div > div:not(:last-child) {
+  border-bottom: 1px solid #ebedee;
+}
+
+.form-offers > div > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+}
+
+.form-offers input {
+  border: none;
+  border-bottom: 1px solid #ebedee;
+  color: black;
+  font-size: 16px;
+  width: 50%;
+}
+
+.file-upload {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-upload input {
+  border: 1px solid #0ab1ba;
+  color: #0ab1ba;
+}
+
+.price-checkbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.checkbox-exchanges {
+  display: flex;
+}
+
+.div-publish-offer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+button.publish-offer {
+  width: 140px;
+  padding: 14px;
+  font-size: 15px;
 }

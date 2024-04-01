@@ -8,7 +8,7 @@ const RangeInput = ({ range, setRange }) => {
         <Range
           step={1}
           min={0}
-          max={300}
+          max={500}
           values={range}
           onChange={(values) => setRange(values)}
           onFinalChange={(values) => setRange(values)}

@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import heroimg from "../assets/imgs/heroimg.jpg";
 import userimg from "../assets/imgs/user-icon.png";
 
-const Home = ({ input, range, sortingPrices }) => {
+const Home = ({ input, range, sortingPrices, setToHide }) => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -37,7 +37,16 @@ const Home = ({ input, range, sortingPrices }) => {
           <img src={heroimg} alt="image principale" />
           <div className="notice-sell">
             <p>Prêts à faire du tri dans vos placards ?</p>
-            <button className="begin-to-sell">Commencer à vendre</button>
+            <Link to="/offer/publish">
+              <button
+                className="begin-to-sell"
+                onClick={() => {
+                  setToHide(true);
+                }}
+              >
+                Commencer à vendre
+              </button>
+            </Link>
           </div>
         </div>
         <div className="container">
