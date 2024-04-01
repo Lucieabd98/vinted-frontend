@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 
 import Cookies from "js-cookie";
 
@@ -12,10 +11,23 @@ import Offer from "./pages/Offer";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
+library.add(faArrowDown, faArrowUp);
+
 function App() {
   const [input, setInput] = useState("");
   const [range, setRange] = useState([10, 100]);
   const [sortPrice, setSortPrice] = useState(false);
+  let sortingPrices = "";
+
+  if (sortPrice === false) {
+    sortingPrices = "asc";
+  } else {
+    sortingPrices = "desc";
+  }
+
+  const [toHide, setToHide] = useState(false);
 
   const [token, setToken] = useState(Cookies.get("token") || null);
   console.log(token);
@@ -42,18 +54,30 @@ function App() {
           setRange={setRange}
           sortPrice={sortPrice}
           setSortPrice={setSortPrice}
+          toHide={toHide}
+          setToHide={setToHide}
         />
         <Routes>
           <Route
             path="/"
-            element={<Home input={input} range={range} sortPrice={sortPrice} />}
+            element={
+              <Home
+                input={input}
+                range={range}
+                sortPrice={sortPrice}
+                sortingPrices={sortingPrices}
+              />
+            }
           />
           <Route path="/offer/:id" element={<Offer />} />
           <Route
             path="/signup"
-            element={<Signup handleToken={handleToken} />}
+            element={<Signup handleToken={handleToken} setToHide={setToHide} />}
           />
-          <Route path="/login" element={<Login handleToken={handleToken} />} />
+          <Route
+            path="/login"
+            element={<Login handleToken={handleToken} setToHide={setToHide} />}
+          />
         </Routes>
       </Router>
     </>

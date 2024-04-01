@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import { useParams } from "react-router-dom";
 
-const Signup = ({ handleToken }) => {
+const Signup = ({ handleToken, setToHide }) => {
   const navigate = useNavigate();
 
   const [username, setUserName] = useState("");
@@ -33,6 +33,7 @@ const Signup = ({ handleToken }) => {
         }
       );
       handleToken(response.data.token);
+      setToHide(false);
       navigate("/");
     } catch (error) {
       console.log(error);

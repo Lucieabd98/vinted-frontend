@@ -24,6 +24,7 @@ header {
   position: sticky;
   top: 0px;
   background-color: white;
+  z-index: 10;
 }
 
 header img {
@@ -52,7 +53,8 @@ header .right-buttons button {
 
 header button.sell,
 .buy-offer,
-.signup {
+.signup,
+button.begin-to-sell {
   padding: 5px 20px;
   border: 1px solid #2cb1ba;
   background-color: #2cb1ba;
@@ -80,23 +82,50 @@ header input {
 
 /* =========== MAIN =========== */
 
-.top-offer .userimg {
-  border-radius: 50%;
-  height: 25px;
-  object-fit: cover;
-  width: 25px;
-}
-
-.top-offer p {
-  font-size: 14px;
-  font-weight: 300;
-}
-
 main .heroimg img {
   width: 100%;
   height: 455px;
   object-fit: cover;
   object-position: center;
+}
+
+.notice-sell {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  box-shadow: 0 0 2px hsla(0, 0%, 7%, 0.24);
+  background-color: white;
+  position: absolute;
+  bottom: 350px;
+  left: 100px;
+  display: flex;
+  font-size: 34px;
+  height: 270px;
+  width: 400px;
+  justify-content: center;
+  padding: 25px;
+  border-radius: 3px;
+  z-index: 0;
+}
+
+.notice-sell button.begin-to-sell {
+  width: 185px;
+  padding: 14px;
+  font-size: 15px;
+}
+
+.top-offer .userimg {
+  border-radius: 50%;
+  height: 30px;
+  object-fit: contain;
+  width: 30px;
+}
+
+.top-offer p {
+  font-size: 13px;
+  font-weight: 300;
 }
 
 .home-offers {
@@ -125,7 +154,7 @@ main img {
 .product-details {
   flex-direction: column;
   display: flex;
-  padding: 15px 7px;
+  padding: 13px 5px;
   gap: 5px;
 }
 
@@ -137,7 +166,7 @@ main img {
 }
 
 .product-details > p:first-child {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 14px;
 }
 
@@ -411,7 +440,7 @@ button.login {
 }
 
 .range p:not(:first-child) {
-  font-size: 16px;
+  font-size: 14px;
   background-color: #2cb1ba;
   color: white;
   padding: 5px;

@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import heroimg from "../assets/imgs/heroimg.jpg";
 import userimg from "../assets/imgs/user-icon.png";
 
-const Home = ({ input, range }) => {
+const Home = ({ input, range, sortingPrices }) => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -16,7 +16,9 @@ const Home = ({ input, range }) => {
         "&priceMin=" +
         range[0] +
         "&priceMax=" +
-        range[1]
+        range[1] +
+        "&sort=" +
+        sortingPrices
     );
     // console.log(response.data);
     setData(response.data);
@@ -24,7 +26,7 @@ const Home = ({ input, range }) => {
   };
   useEffect(() => {
     fetchData();
-  }, [input, range]);
+  }, [input, range, sortingPrices]);
 
   return isLoading ? (
     <span>En cours de chargement... </span>
@@ -33,6 +35,10 @@ const Home = ({ input, range }) => {
       <main>
         <div className="heroimg">
           <img src={heroimg} alt="image principale" />
+          <div className="notice-sell">
+            <p>Prêts à faire du tri dans vos placards ?</p>
+            <button className="begin-to-sell">Commencer à vendre</button>
+          </div>
         </div>
         <div className="container">
           <div className="home-offers container">

@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-const Login = ({ handleToken }) => {
+const Login = ({ handleToken, setToHide }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   console.log(email);
@@ -24,6 +24,7 @@ const Login = ({ handleToken }) => {
         }
       );
       handleToken(response.data.token);
+      setToHide(false);
       navigate("/");
     } catch (error) {
       console.log(error);

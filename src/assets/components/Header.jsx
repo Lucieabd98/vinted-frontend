@@ -13,6 +13,8 @@ const Header = ({
   setRange,
   sortPrice,
   setSortPrice,
+  toHide,
+  setToHide,
 }) => {
   console.log(token);
   const navigate = useNavigate();
@@ -29,20 +31,37 @@ const Header = ({
 
           <div>
             <SearchInput input={input} setInput={setInput} />
-            <div className="filters">
-              <SwitchButton sortPrice={sortPrice} setSortPrice={setSortPrice} />
-              <RangeInput range={range} setRange={setRange} />
-            </div>
+            {toHide === false && (
+              <div className="filters">
+                <SwitchButton
+                  sortPrice={sortPrice}
+                  setSortPrice={setSortPrice}
+                />
+                <RangeInput range={range} setRange={setRange} />
+              </div>
+            )}
           </div>
 
           {!token ? (
             <>
               <div className="right-buttons">
                 <Link to={"/signup"}>
-                  <button>S'inscrire</button>
+                  <button
+                    onClick={() => {
+                      setToHide(true);
+                    }}
+                  >
+                    S'inscrire
+                  </button>
                 </Link>
                 <Link to={"/login"}>
-                  <button>Se connecter</button>
+                  <button
+                    onClick={() => {
+                      setToHide(true);
+                    }}
+                  >
+                    Se connecter
+                  </button>
                 </Link>
               </div>
             </>
