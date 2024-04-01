@@ -25,24 +25,23 @@ const Pagination = ({ pageNumber, setPageNumber, maxPages }) => {
         )}
 
         <button className="current-page">{pageNumber}</button>
-        {nextPage !== maxPages && (
-          <button
-            onClick={() => {
-              setPageNumber(nextPage);
-            }}
-          >
-            {pageNumber + 1}
-          </button>
-        )}
-
-        {nextPage !== maxPages && (
-          <button
-            onClick={() => {
-              setPageNumber(nextPage);
-            }}
-          >
-            suivant
-          </button>
+        {nextPage <= maxPages && (
+          <>
+            <button
+              onClick={() => {
+                setPageNumber(nextPage);
+              }}
+            >
+              {pageNumber + 1}
+            </button>
+            <button
+              onClick={() => {
+                setPageNumber(nextPage);
+              }}
+            >
+              suivant
+            </button>
+          </>
         )}
       </div>
     </>

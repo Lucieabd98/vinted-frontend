@@ -36,7 +36,7 @@ function App() {
   const [pageNumber, setPageNumber] = useState(1);
   const [maxOffer, setMaxOffer] = useState();
 
-  const maxPages = maxOffer - 15;
+  let maxPages = Math.ceil(maxOffer / 10);
   console.log(maxPages);
 
   const handleToken = (token) => {
