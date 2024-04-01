@@ -6,16 +6,26 @@ const Pagination = ({ pageNumber, setPageNumber, maxPages }) => {
     <>
       <div className="pagination">
         {previousPage !== 0 && (
-          <button
-            onClick={() => {
-              setPageNumber(previousPage);
-            }}
-          >
-            précédent
-          </button>
+          <>
+            <button
+              onClick={() => {
+                setPageNumber(previousPage);
+              }}
+            >
+              précédent
+            </button>
+            <button
+              onClick={() => {
+                setPageNumber(previousPage);
+              }}
+            >
+              {previousPage}
+            </button>
+          </>
         )}
-        <button>{pageNumber}</button>
-        {nextPage === maxPages && (
+
+        <button className="current-page">{pageNumber}</button>
+        {nextPage !== maxPages && (
           <button
             onClick={() => {
               setPageNumber(nextPage);
@@ -25,7 +35,7 @@ const Pagination = ({ pageNumber, setPageNumber, maxPages }) => {
           </button>
         )}
 
-        {nextPage === maxPages && (
+        {nextPage !== maxPages && (
           <button
             onClick={() => {
               setPageNumber(nextPage);
