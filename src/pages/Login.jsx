@@ -7,12 +7,11 @@ import { useNavigate } from "react-router-dom";
 const Login = ({ handleToken, setToHide }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
-  console.log(email);
   const [password, setPassword] = useState("");
-  console.log(password);
+
+  const [errorInput, setErrorInput] = useState("");
 
   const handleSubmit = async (event) => {
-    console.log("soumission du formulaire");
     event.preventDefault();
 
     try {
@@ -28,6 +27,7 @@ const Login = ({ handleToken, setToHide }) => {
       navigate("/");
     } catch (error) {
       console.log(error);
+      setErrorInput(error.message);
     }
   };
 
@@ -60,6 +60,12 @@ const Login = ({ handleToken, setToHide }) => {
           </Link>
         </div>
       </form>
+      {errorInput === "Request failed with status code 400" ||
+        (errorInput === "Request failed with status code 500" && (
+          <p className="errormessage container">
+            L'email ou le mot de passe sont incorrects.
+          </p>
+        ))}
     </>
   );
 };

@@ -44,7 +44,6 @@ const Publish = ({ token, setToHide }) => {
           },
         }
       );
-      // console.log(response.data);
       setPictureFromCloudinary(response.data.secure_url);
       setToHide(false);
       navigate("/");
@@ -73,7 +72,7 @@ const Publish = ({ token, setToHide }) => {
               {picture && (
                 <img
                   src={URL.createObjectURL(picture)}
-                  alt="image choisie"
+                  alt="produit choisi"
                   style={{ display: "flex", height: "80px" }}
                 />
               )}

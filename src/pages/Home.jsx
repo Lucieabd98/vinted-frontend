@@ -35,7 +35,6 @@ const Home = ({
         "&page=" +
         pageNumber
     );
-    // console.log(response.data.count);
     setData(response.data);
     setMaxOffer(response.data.count);
     setIsLoading(false);
@@ -50,7 +49,7 @@ const Home = ({
     <>
       <main>
         <div className="heroimg">
-          <img src={heroimg} alt="image principale" />
+          <img src={heroimg} alt="principale" />
           <div className="notice-sell">
             <p>Prêts à faire du tri dans vos placards ?</p>
             <Link to="/offer/publish">
@@ -69,8 +68,6 @@ const Home = ({
           <div className="home-offers container">
             {data.offers.map((offer) => {
               const offeridurl = `/offer/${offer._id}`;
-              // console.log(offer);
-              // console.log(offer.owner.account.avatar.secure_url);
               return (
                 <>
                   <Link
@@ -89,13 +86,16 @@ const Home = ({
                             alt="icone de l'utilisateur"
                           />
                         ) : (
-                          <img className="userimg" src={userimg} />
+                          <img className="userimg" src={userimg} alt="avatar" />
                         )}
 
                         <p>{offer.owner.account.username}</p>
                       </div>
                       <div>
-                        <img src={offer.product_image.secure_url} />
+                        <img
+                          src={offer.product_image.secure_url}
+                          alt="produit"
+                        />
                         <div className="product-details">
                           <p>{offer.product_price} €</p>
                           <p>{offer.product_details[1].TAILLE}</p>

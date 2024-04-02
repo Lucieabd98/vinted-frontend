@@ -2,25 +2,21 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { useParams } from "react-router-dom";
 
 const Signup = ({ handleToken, setToHide }) => {
   const navigate = useNavigate();
 
   const [username, setUserName] = useState("");
-  // console.log(userName);
 
   const [email, setEmail] = useState("");
-  // console.log(email);
 
   const [password, setPassword] = useState("");
-  // console.log(password);
 
   const [newsletter, setNewsletter] = useState(false);
-  // console.log(newsletter);
+
+  const [errorInput, setErrorInput] = useState("");
 
   const handleSumbit = async (event) => {
-    console.log("soumission du formulaire");
     event.preventDefault();
     try {
       const response = await axios.post(
@@ -37,6 +33,7 @@ const Signup = ({ handleToken, setToHide }) => {
       navigate("/");
     } catch (error) {
       console.log(error);
+      setErrorInput(error.message);
     }
   };
 
@@ -95,6 +92,14 @@ const Signup = ({ handleToken, setToHide }) => {
           </Link>
         </div>
       </form>
+      {errorInput === "Request failed with status code 409" && (
+        <p className="errormessage container">L'email a déjà été utilisé.</p>
+      )}
+      {errorInput === "Request failed with status code 400" && (
+        <p className="errormessage container">
+          Le nom d'utilisateur est obligatoire.
+        </p>
+      )}
     </>
   );
 };

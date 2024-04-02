@@ -16,7 +16,6 @@ const Header = ({
   toHide,
   setToHide,
 }) => {
-  // console.log(token);
   const navigate = useNavigate();
 
   return (
@@ -75,6 +74,7 @@ const Header = ({
                 className="deconnect"
                 onClick={() => {
                   handleToken(null);
+                  setToHide(false);
                   navigate("/");
                 }}
               >

@@ -478,6 +478,16 @@ button.login {
   transition-duration: 0.4s;
 }
 
+.errormessage {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+}
+
 /* ============= COMPONENTS =============== */
 
 .range,
@@ -495,11 +505,11 @@ button.login {
 .range p:first-child,
 .switch p:first-child {
   margin-right: 10px;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .range p:not(:first-child) {
-  font-size: 12px;
+  font-size: 13px;
   background-color: #2cb1ba;
   color: white;
   padding: 5px;

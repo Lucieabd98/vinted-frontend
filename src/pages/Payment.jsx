@@ -1,7 +1,4 @@
 import { Navigate, useLocation } from "react-router-dom";
-import axios from "axios";
-import { useState } from "react";
-
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "../assets/components/CheckoutForm";
@@ -15,10 +12,8 @@ const Payment = ({ token, setToHide }) => {
   const { title, price, description, sellername } = location.state;
 
   const total = price + 0.5 + 1;
-  console.log(total);
 
   const amount = total * 100;
-  console.log(amount);
 
   const options = {
     // Type de transaction

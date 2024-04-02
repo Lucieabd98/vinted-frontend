@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import Cookies from "js-cookie";
 
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Header from "./assets/components/Header";
 import Home from "./pages/Home";
@@ -32,13 +32,11 @@ function App() {
   const [toHide, setToHide] = useState(false);
 
   const [token, setToken] = useState(Cookies.get("token") || null);
-  console.log(token);
 
   const [pageNumber, setPageNumber] = useState(1);
   const [maxOffer, setMaxOffer] = useState();
 
   let maxPages = Math.ceil(maxOffer / 10);
-  // console.log(maxPages);
 
   const handleToken = (token) => {
     if (token) {

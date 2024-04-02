@@ -1,6 +1,5 @@
 import Switch from "react-switch";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faL } from "@fortawesome/free-solid-svg-icons";
 const arrowDown = <FontAwesomeIcon icon="arrow-down" />;
 const arrowUp = <FontAwesomeIcon icon="arrow-up" />;
 

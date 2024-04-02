@@ -15,7 +15,6 @@ const Offer = () => {
       `https://site--backend-vinted--txtnrrwcytwl.code.run/offers/`
     );
 
-    // console.log(response.data);
     setData(response.data);
     setIsLoading(false);
   };
@@ -29,13 +28,15 @@ const Offer = () => {
     <>
       {data.offers.map((offer) => {
         if (offer._id === id) {
-          // console.log(offer);
           return (
             <>
               <div key={offer.id} className="selected-offer">
                 <div className="offer-content container">
-                  <div className="offer-img">
-                    <img src={offer.product_image.secure_url} />
+                  <div
+                    key={offer.product_image.secure_url}
+                    className="offer-img"
+                  >
+                    <img src={offer.product_image.secure_url} alt="product" />
                   </div>
                   <div className="offer-infos">
                     <div className="offer-general">
@@ -77,7 +78,7 @@ const Offer = () => {
                               alt="avatar de l'utilisateur"
                             />
                           ) : (
-                            <img src={userimg} />
+                            <img src={userimg} alt="avatar par defaut" />
                           )}
                         </p>
                         <p>{offer.owner.account.username}</p>
