@@ -28,9 +28,6 @@ const Payment = ({ token, setToHide }) => {
     // Devise de la transaction
     currency: "eur",
     // On peut customiser l'apparence ici
-    appearance: {
-      /*...*/
-    },
   };
 
   return token ? (
