@@ -18,6 +18,7 @@ a {
   text-decoration: none;
   color: black;
 }
+
 /* ============== HEADER =========== */
 
 header {
@@ -44,7 +45,7 @@ header .container {
 }
 
 header .right-buttons button {
-  padding: 5px 25px;
+  padding: 7px 25px;
   border: 1px solid #2cb1ba;
   background-color: white;
   color: #2cb1ba;
@@ -56,7 +57,7 @@ header button.sell,
 .signup,
 button.begin-to-sell,
 button.publish-offer {
-  padding: 5px 20px;
+  padding: 7px 25px;
   border: 1px solid #2cb1ba;
   background-color: #2cb1ba;
   color: white;
@@ -72,7 +73,8 @@ header .right-buttons button:hover {
 
 button.begin-to-sell:hover,
 header button.sell:hover,
-.buy-offer:hover {
+.buy-offer:hover,
+button.publish-offer:hover {
   border: 1px solid #2cb1ba;
   background-color: white;
   color: #2cb1ba;
@@ -93,7 +95,7 @@ header input {
   border: solid 1px #c2175b;
   border-radius: 5px;
   color: white;
-  padding: 5px 20px;
+  padding: 7px 20px;
   background-color: #c2175b;
 }
 
@@ -512,7 +514,31 @@ button.login {
 
 /* ========= PUBLISH =========== */
 
+.file-upload {
+  display: flex;
+  gap: 20px;
+}
+
+.file-upload input {
+  display: none;
+}
+
+.file-upload label {
+  padding: 20px;
+  border: #2cb1ba 2px solid;
+  border-radius: 5px;
+  color: #2cb1ba;
+  cursor: pointer;
+}
+
+.file-upload label:hover {
+  background-color: #2cb1ba;
+  color: white;
+  transition-duration: 0.2s;
+}
+
 .publish-offer h2 {
+  padding: 40px 0 20px 0;
   font-size: 24px;
   font-weight: 300;
 }
@@ -549,7 +575,7 @@ button.login {
   border-bottom: 1px solid #ebedee;
 }
 
-.form-offers > div > div {
+.form-offers > div > div:not(.checkbox) {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -557,11 +583,19 @@ button.login {
   padding: 24px;
 }
 
-.form-offers input {
+.form-offers input:not(.checkbox input) {
   border: none;
   border-bottom: 1px solid #ebedee;
-  color: black;
   font-size: 16px;
+  font-weight: 200;
+  width: 50%;
+}
+
+.form-offers textarea {
+  border: none;
+  border-bottom: 1px solid #ebedee;
+  font-size: 16px;
+  font-weight: 200;
   width: 50%;
 }
 
@@ -577,15 +611,12 @@ button.login {
   color: #0ab1ba;
 }
 
-.price-checkbox {
+div.checkbox {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
   align-items: center;
-  width: 50%;
-}
-
-.checkbox-exchanges {
-  display: flex;
+  gap: 20px;
 }
 
 .div-publish-offer {
@@ -598,6 +629,11 @@ button.publish-offer {
   width: 140px;
   padding: 14px;
   font-size: 15px;
+}
+
+.publish-offer label,
+.publish-offer p {
+  font-weight: 300;
 }
 
 /* ========= PAGINATION ============= */

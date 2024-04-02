@@ -2,6 +2,7 @@ import axios from "axios";
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const Publish = ({ token, setToHide }) => {
   const navigate = useNavigate();
@@ -52,24 +53,35 @@ const Publish = ({ token, setToHide }) => {
     }
   };
 
-  return (
+  return token ? (
     <>
       <div className="background">
         <div className="publish-offer container">
           <h2>Vends ton article</h2>
           <form className="form-offers  " onSubmit={handleSubmit}>
             <div className="file-upload">
-              <input
-                type="file"
-                onChange={(event) => {
-                  setPicture(event.target.files[0]);
-                }}
-              />
+              <label htmlFor="file">
+                + Ajoute une photo
+                <input
+                  id="file"
+                  type="file"
+                  onChange={(event) => {
+                    setPicture(event.target.files[0]);
+                  }}
+                />
+              </label>
+              {picture && (
+                <img
+                  src={URL.createObjectURL(picture)}
+                  alt="image choisie"
+                  style={{ display: "flex", height: "80px" }}
+                />
+              )}
             </div>
             <div>
               <div>
                 <label htmlFor="title">Titre</label>
-                <input
+                <textarea
                   id="title"
                   type="text"
                   placeholder="ex: Chemise Sézane Verte"
@@ -80,7 +92,7 @@ const Publish = ({ token, setToHide }) => {
               </div>
               <div>
                 <label htmlFor="description">Décris ton article</label>
-                <input
+                <textarea
                   id="description"
                   type="text"
                   placeholder="ex: Porté quelques fois, taille correctement"
@@ -93,7 +105,7 @@ const Publish = ({ token, setToHide }) => {
             <div>
               <div>
                 <label htmlFor="brand">Marque</label>
-                <input
+                <textarea
                   id="brand"
                   type="text"
                   placeholder="ex: Zara"
@@ -104,7 +116,7 @@ const Publish = ({ token, setToHide }) => {
               </div>
               <div>
                 <label htmlFor="size">Taille</label>
-                <input
+                <textarea
                   id="size"
                   type="text"
                   placeholder="ex: L/40/12"
@@ -115,7 +127,7 @@ const Publish = ({ token, setToHide }) => {
               </div>
               <div>
                 <label htmlFor="color">Couleur</label>
-                <input
+                <textarea
                   id="color"
                   type="text"
                   placeholder="ex: Fushia"
@@ -126,7 +138,7 @@ const Publish = ({ token, setToHide }) => {
               </div>
               <div>
                 <label htmlFor="condition">État</label>
-                <input
+                <textarea
                   id="condition"
                   type="text"
                   placeholder="Neuf avec étiquette"
@@ -137,7 +149,7 @@ const Publish = ({ token, setToHide }) => {
               </div>
               <div>
                 <label htmlFor="location">Lieu</label>
-                <input
+                <textarea
                   id="location"
                   type="text"
                   placeholder="ex: Paris"
@@ -160,7 +172,7 @@ const Publish = ({ token, setToHide }) => {
                   }}
                 />
               </div>
-              <div>
+              <div className="checkbox">
                 <input
                   type="checkbox"
                   name=""
@@ -182,6 +194,8 @@ const Publish = ({ token, setToHide }) => {
         </div>
       </div>
     </>
+  ) : (
+    <Navigate to="/login" />
   );
 };
 

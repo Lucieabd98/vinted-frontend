@@ -94,13 +94,7 @@ function App() {
 
           <Route
             path="/offer/publish"
-            element={
-              token ? (
-                <Publish token={token} setToHide={setToHide} />
-              ) : (
-                <Login handleToken={handleToken} setToHide={setToHide} />
-              )
-            }
+            element={<Publish token={token} setToHide={setToHide} />}
           />
         </Routes>
       </Router>
