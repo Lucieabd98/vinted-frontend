@@ -60,12 +60,16 @@ const Login = ({ handleToken, setToHide }) => {
           </Link>
         </div>
       </form>
-      {errorInput === "Request failed with status code 400" ||
-        (errorInput === "Request failed with status code 500" && (
-          <p className="errormessage container">
-            L'email ou le mot de passe sont incorrects.
-          </p>
-        ))}
+      {errorInput === "Request failed with status code 400" && (
+        <p className="errormessage container">
+          L'email ou le mot de passe sont incorrects.
+        </p>
+      )}
+      {errorInput === "Request failed with status code 500" && (
+        <p className="errormessage container">
+          L'email ou le mot de passe sont incorrects.
+        </p>
+      )}
     </>
   );
 };

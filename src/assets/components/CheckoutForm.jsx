@@ -7,9 +7,6 @@ import { useState } from "react";
 import axios from "axios";
 
 const CheckoutForm = ({ amount, description, title, sellername }) => {
-  console.log(`le total ===> ${amount}`);
-  console.log(`la description ===> ${description}`);
-  console.log(sellername);
   const stripe = useStripe();
   const elements = useElements();
 
@@ -39,8 +36,6 @@ const CheckoutForm = ({ amount, description, title, sellername }) => {
         "https://site--backend-vinted--txtnrrwcytwl.code.run/payment",
         { amount: amount, description: description }
       );
-
-      // console.log(response.message);
 
       const clientSecret = response.data.client_secret;
 

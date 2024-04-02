@@ -11,9 +11,12 @@ const Payment = ({ token, setToHide }) => {
   const location = useLocation();
   const { title, price, description, sellername } = location.state;
 
-  const total = price + 0.5 + 1;
+  const shippinFees = price * 0.2;
+  const protectFees = price * 0.1;
 
-  const amount = total * 100;
+  const total = price + 0.5 + shippinFees;
+
+  const amount = Number((total * 100).toFixed(0));
 
   const options = {
     // Type de transaction
@@ -34,23 +37,24 @@ const Payment = ({ token, setToHide }) => {
           </div>
           <ul>
             <li>
-              Commande <p>{price}.00€</p>
+              Commande <p>{price.toFixed(2)}€</p>
             </li>
             <li>
-              Frais de protection acheteurs <p>0.50€</p>
+              Frais de protection acheteurs <p>{protectFees.toFixed(2)}€</p>
             </li>
             <li>
-              Frais de port <p>1.00€</p>
+              Frais de port <p>{shippinFees.toFixed(2)}€</p>
             </li>
           </ul>
           <div className="price">
             <p>Total</p>
-            <p>{total}€</p>
+            <p>{total.toFixed(2)}€</p>
           </div>
           <div className="content">
             <p>
               Il ne vous reste plus qu'une étape pour vous offrir
-              <span> {title}</span>. Vous allez payer <span>{price}€ </span>
+              <span> {title}</span>. Vous allez payer{" "}
+              <span>{total.toFixed(2)}€ </span>
               (frais de protection et frais de port inclus).
             </p>
           </div>

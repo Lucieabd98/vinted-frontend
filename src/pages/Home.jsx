@@ -69,42 +69,37 @@ const Home = ({
             {data.offers.map((offer) => {
               const offeridurl = `/offer/${offer._id}`;
               return (
-                <>
-                  <Link
-                    key={offer.id}
-                    to={offeridurl}
-                    onClick={() => {
-                      setToHide(true);
-                    }}
-                  >
-                    <div className="one-offer">
-                      <div className="top-offer">
-                        {offer.owner.account.avatar ? (
-                          <img
-                            className="userimg"
-                            src={offer.owner.account.avatar.secure_url}
-                            alt="icone de l'utilisateur"
-                          />
-                        ) : (
-                          <img className="userimg" src={userimg} alt="avatar" />
-                        )}
-
-                        <p>{offer.owner.account.username}</p>
-                      </div>
-                      <div>
+                <Link
+                  key={offer._id}
+                  to={offeridurl}
+                  onClick={() => {
+                    setToHide(true);
+                  }}
+                >
+                  <div className="one-offer">
+                    <div className="top-offer">
+                      {offer.owner.account.avatar ? (
                         <img
-                          src={offer.product_image.secure_url}
-                          alt="produit"
+                          className="userimg"
+                          src={offer.owner.account.avatar.secure_url}
+                          alt="icone de l'utilisateur"
                         />
-                        <div className="product-details">
-                          <p>{offer.product_price} €</p>
-                          <p>{offer.product_details[1].TAILLE}</p>
-                          <p>{offer.product_details[0].MARQUE}</p>
-                        </div>
+                      ) : (
+                        <img className="userimg" src={userimg} alt="avatar" />
+                      )}
+
+                      <p>{offer.owner.account.username}</p>
+                    </div>
+                    <div>
+                      <img src={offer.product_image.secure_url} alt="produit" />
+                      <div className="product-details">
+                        <p>{offer.product_price} €</p>
+                        <p>{offer.product_details[1].TAILLE}</p>
+                        <p>{offer.product_details[0].MARQUE}</p>
                       </div>
                     </div>
-                  </Link>
-                </>
+                  </div>
+                </Link>
               );
             })}
           </div>
