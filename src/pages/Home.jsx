@@ -73,7 +73,13 @@ const Home = ({
               // console.log(offer.owner.account.avatar.secure_url);
               return (
                 <>
-                  <Link key={offer.id} to={offeridurl}>
+                  <Link
+                    key={offer.id}
+                    to={offeridurl}
+                    onClick={() => {
+                      setToHide(true);
+                    }}
+                  >
                     <div className="one-offer">
                       <div className="top-offer">
                         {offer.owner.account.avatar ? (

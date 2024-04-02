@@ -6,13 +6,14 @@ import {
 import { useState } from "react";
 import axios from "axios";
 
-const CheckoutForm = ({ amount, description }) => {
-  //   console.log(`le total ===> ${amount}`);
-  //   console.log(`la description ===> ${description}`);
+const CheckoutForm = ({ amount, description, title, sellername }) => {
+  console.log(`le total ===> ${amount}`);
+  console.log(`la description ===> ${description}`);
+  console.log(sellername);
   const stripe = useStripe();
   const elements = useElements();
 
-  const [errorMessage, setErrorMessage] = useState(null);
+  const [error, setError] = useState(null);
   const [completed, setCompleted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -30,7 +31,7 @@ const CheckoutForm = ({ amount, description }) => {
       const { error: submitError } = await elements.submit();
       if (submitError) {
         // Affiche l'erreur en question
-        //   setErrorMessage(error.message);
+        setError(error.message);
         return;
       }
 
@@ -59,7 +60,7 @@ const CheckoutForm = ({ amount, description }) => {
       // Si une erreur a lieu pendant la confirmation
       if (stripeResponse.error) {
         // On la montre au client
-        setErrorMessage(stripeResponse.error.message);
+        setError(stripeResponse.error.message);
       }
 
       // Si on reçois un status succeeded on fais passer completed à true
@@ -74,15 +75,25 @@ const CheckoutForm = ({ amount, description }) => {
   };
 
   return completed ? (
-    <p>Paiement effectué</p>
+    <p>
+      <span>Achat réalisé avec succés !</span> Nous vous confirmons que votre
+      paiement pour
+      <span> {title} </span>a bien été effectué. Maintenant, attendez que
+      <span> {sellername} </span>
+      envoie le colis.
+    </p>
   ) : (
     <form className="checkout-form" onSubmit={handleSubmit}>
       <PaymentElement />
-      <button type="submit" disabled={!stripe || !elements || isLoading}>
+      <button
+        className="payment-button"
+        type="submit"
+        disabled={!stripe || !elements || isLoading}
+      >
         Pay
       </button>
       {/* Éventuel message d'erreur */}
-      {errorMessage && <div>{errorMessage}</div>}
+      {error && <div>{error}</div>}
     </form>
   );
 };

@@ -12,7 +12,7 @@ const stripePromise = loadStripe(
 
 const Payment = ({ token, setToHide }) => {
   const location = useLocation();
-  const { title, price, description } = location.state;
+  const { title, price, description, sellername } = location.state;
 
   const total = price + 0.5 + 1;
   console.log(total);
@@ -61,7 +61,12 @@ const Payment = ({ token, setToHide }) => {
           </div>
           <div className="checkout-form">
             <Elements stripe={stripePromise} options={options}>
-              <CheckoutForm amount={amount} description={description} />
+              <CheckoutForm
+                amount={amount}
+                description={description}
+                title={title}
+                sellername={sellername}
+              />
             </Elements>
           </div>
         </div>

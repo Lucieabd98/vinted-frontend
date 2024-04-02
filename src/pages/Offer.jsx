@@ -86,6 +86,7 @@ const Offer = () => {
                     <Link
                       to="/payment"
                       state={{
+                        sellername: offer.owner.account.username,
                         title: offer.product_name,
                         price: offer.product_price,
                         description: offer.product_description,

@@ -60,7 +60,8 @@ header button.sell,
 .buy-offer,
 .signup,
 button.begin-to-sell,
-button.publish-offer {
+button.publish-offer,
+.payment-button {
   padding: 7px 25px;
   border: 1px solid #2cb1ba;
   background-color: #2cb1ba;
@@ -238,7 +239,8 @@ main .heroimg img {
 .selected-offer {
   background-color: #ebedee;
   font-family: "Inter", sans-serif;
-  padding: 30px;
+  padding: 100px;
+  height: calc(100vh - 68px);
 }
 
 .offer-infos {
@@ -676,6 +678,8 @@ button.current-page {
   font-family: "Inter", sans-serif;
   font-weight: 300;
   background-color: #ebedee;
+  padding-top: 20px;
+  height: calc(100vh - 68px);
 }
 
 .payment-page h2 {
@@ -718,13 +722,33 @@ button.current-page {
   border-bottom: 1px solid #eaeaea;
 }
 
-.payment-page .content p {
+.payment-page .content p,
+.checkout-form p {
   padding-bottom: 40px;
   line-height: 20px;
 }
 
+.checkout-form p {
+  padding: 20px;
+  text-align: center;
+}
+
 .checkout-form {
-  padding: 30px;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
+}
+
+.payment-button {
+  margin-top: 40px;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.payment-button:hover {
+  border: 1px solid #2cb1ba;
+  background-color: white;
+  color: #2cb1ba;
+  transition-duration: 0.4s;
 }
