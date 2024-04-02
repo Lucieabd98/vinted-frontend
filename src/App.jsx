@@ -11,6 +11,7 @@ import Offer from "./pages/Offer";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Publish from "./pages/Publish";
+import Payment from "./pages/Payment";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
@@ -37,7 +38,7 @@ function App() {
   const [maxOffer, setMaxOffer] = useState();
 
   let maxPages = Math.ceil(maxOffer / 10);
-  console.log(maxPages);
+  // console.log(maxPages);
 
   const handleToken = (token) => {
     if (token) {
@@ -95,6 +96,10 @@ function App() {
           <Route
             path="/offer/publish"
             element={<Publish token={token} setToHide={setToHide} />}
+          />
+          <Route
+            path="/payment"
+            element={<Payment token={token} setToHide={setToHide} />}
           />
         </Routes>
       </Router>

@@ -34,6 +34,16 @@ const Pagination = ({ pageNumber, setPageNumber, maxPages }) => {
             >
               {pageNumber + 1}
             </button>
+            {pageNumber + 2 <= maxPages && (
+              <button
+                onClick={() => {
+                  setPageNumber(pageNumber + 2);
+                }}
+              >
+                {pageNumber + 2}
+              </button>
+            )}
+
             <button
               onClick={() => {
                 setPageNumber(nextPage);
