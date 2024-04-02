@@ -63,6 +63,22 @@ button.publish-offer {
   border-radius: 5px;
 }
 
+header .right-buttons button:hover {
+  border: 1px solid #2cb1ba;
+  background-color: #2cb1ba;
+  color: white;
+  transition-duration: 0.4s;
+}
+
+button.begin-to-sell:hover,
+header button.sell:hover,
+.buy-offer:hover {
+  border: 1px solid #2cb1ba;
+  background-color: white;
+  color: #2cb1ba;
+  transition-duration: 0.4s;
+}
+
 header input {
   border: none;
 
@@ -79,6 +95,12 @@ header input {
   color: white;
   padding: 5px 20px;
   background-color: #c2175b;
+}
+
+.deconnect:hover {
+  background-color: white;
+  color: #c2175b;
+  transition-duration: 0.4s;
 }
 
 /* =========== MAIN =========== */
@@ -106,7 +128,6 @@ main .heroimg img {
   background-color: white;
   position: relative;
   top: 75px;
-  left: 318px;
   display: flex;
   font-size: 34px;
   height: 270px;
@@ -115,6 +136,7 @@ main .heroimg img {
   padding: 25px;
   border-radius: 3px;
   z-index: 3;
+  margin-left: 200px;
 }
 
 .notice-sell button.begin-to-sell {
@@ -150,13 +172,19 @@ main .heroimg img {
   width: 235px;
   display: flex;
   padding: 0 6px 20px;
+  /* border: #c2175b solid 1px; */
 }
 
-main img {
+.one-offer:hover {
+  opacity: 80%;
+  transition-duration: 0.2s;
+}
+
+/* main img {
   height: 360px;
   width: 235px;
   object-fit: cover;
-}
+} */
 
 .product-details {
   flex-direction: column;
@@ -370,6 +398,13 @@ button.signup {
   margin-bottom: 20px;
 }
 
+button.signup:hover {
+  border: 1px solid #2cb1ba;
+  background-color: white;
+  color: #2cb1ba;
+  transition-duration: 0.4s;
+}
+
 .to-login,
 .to-signup {
   color: #2cb1ba;
@@ -411,6 +446,7 @@ button.login {
   font-size: 15px;
   margin-bottom: 20px;
 }
+
 .button-login {
   display: flex;
   flex-direction: column;
@@ -425,6 +461,13 @@ button.login {
   padding: 12px;
   font-size: 16px;
   margin-bottom: 20px;
+}
+
+.button-login button:hover {
+  border: 1px solid #2cb1ba;
+  background-color: white;
+  color: #2cb1ba;
+  transition-duration: 0.4s;
 }
 
 /* ============= COMPONENTS =============== */
@@ -448,12 +491,13 @@ button.login {
 }
 
 .range p:not(:first-child) {
-  font-size: 14px;
+  font-size: 12px;
   background-color: #2cb1ba;
   color: white;
   padding: 5px;
   border-radius: 5px;
-  margin: 5px;
+  margin: 10px;
+  font-weight: 200;
 }
 
 .switch {
@@ -577,4 +621,11 @@ button.publish-offer {
 button.current-page {
   background-color: #2cb1ba;
   color: white;
+}
+
+.pagination button:hover {
+  border: 1px solid #2cb1ba;
+  background-color: #2cb1ba;
+  color: white;
+  transition-duration: 0.4s;
 }

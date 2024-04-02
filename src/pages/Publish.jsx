@@ -68,8 +68,9 @@ const Publish = ({ token, setToHide }) => {
             </div>
             <div>
               <div>
-                <p>Titre</p>
+                <label htmlFor="title">Titre</label>
                 <input
+                  id="title"
                   type="text"
                   placeholder="ex: Chemise Sézane Verte"
                   onChange={(event) => {
@@ -78,8 +79,9 @@ const Publish = ({ token, setToHide }) => {
                 />
               </div>
               <div>
-                <p>Décris ton article</p>
+                <label htmlFor="description">Décris ton article</label>
                 <input
+                  id="description"
                   type="text"
                   placeholder="ex: Porté quelques fois, taille correctement"
                   onChange={(event) => {
@@ -90,8 +92,9 @@ const Publish = ({ token, setToHide }) => {
             </div>
             <div>
               <div>
-                <p>Marque</p>
+                <label htmlFor="brand">Marque</label>
                 <input
+                  id="brand"
                   type="text"
                   placeholder="ex: Zara"
                   onChange={(event) => {
@@ -100,8 +103,9 @@ const Publish = ({ token, setToHide }) => {
                 />
               </div>
               <div>
-                <p>Taille</p>
+                <label htmlFor="size">Taille</label>
                 <input
+                  id="size"
                   type="text"
                   placeholder="ex: L/40/12"
                   onChange={(event) => {
@@ -110,8 +114,9 @@ const Publish = ({ token, setToHide }) => {
                 />
               </div>
               <div>
-                <p>Couleur</p>
+                <label htmlFor="color">Couleur</label>
                 <input
+                  id="color"
                   type="text"
                   placeholder="ex: Fushia"
                   onChange={(event) => {
@@ -120,8 +125,9 @@ const Publish = ({ token, setToHide }) => {
                 />
               </div>
               <div>
-                <p>État</p>
+                <label htmlFor="condition">État</label>
                 <input
+                  id="condition"
                   type="text"
                   placeholder="Neuf avec étiquette"
                   onChange={(event) => {
@@ -130,8 +136,9 @@ const Publish = ({ token, setToHide }) => {
                 />
               </div>
               <div>
-                <p>Lieu</p>
+                <label htmlFor="location">Lieu</label>
                 <input
+                  id="location"
                   type="text"
                   placeholder="ex: Paris"
                   onChange={(event) => {
@@ -142,8 +149,9 @@ const Publish = ({ token, setToHide }) => {
             </div>
             <div>
               <div>
-                <p>Prix</p>
+                <label htmlFor="price">Prix</label>
                 <input
+                  id="price"
                   type="text"
                   name=""
                   placeholder="0,00€"

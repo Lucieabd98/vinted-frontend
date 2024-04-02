@@ -1,4 +1,4 @@
-import { Range } from "react-range";
+import { Range, getTrackBackground } from "react-range";
 
 const RangeInput = ({ range, setRange }) => {
   return (
@@ -20,10 +20,14 @@ const RangeInput = ({ range, setRange }) => {
                 {...props}
                 style={{
                   ...props.style,
-                  height: "4px",
+                  height: "3px",
                   width: "100%",
-                  backgroundColor: "#ccc",
-                  color: "#2cb1ba",
+                  background: getTrackBackground({
+                    values: range,
+                    colors: ["#ccc", "#2cb1ba", "#ccc"],
+                    min: 0,
+                    max: 500,
+                  }),
                 }}
               >
                 {children}
@@ -37,8 +41,8 @@ const RangeInput = ({ range, setRange }) => {
                 {...props}
                 style={{
                   ...props.style,
-                  height: "20px",
-                  width: "20px",
+                  height: "15px",
+                  width: "15px",
                   backgroundColor: "#2cb1ba",
                   borderRadius: "50%",
                 }}

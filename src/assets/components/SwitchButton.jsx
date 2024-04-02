@@ -15,14 +15,14 @@ const SwitchButton = ({ sortPrice, setSortPrice }) => {
           }}
           checked={sortPrice}
           onColor="#2cb1ba"
-          handleDiameter={22}
+          handleDiameter={20}
           uncheckedIcon={false}
           checkedIcon={false}
           // checkedHandleIcon={arrowDown}
           boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
           activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
-          height={22}
-          width={48}
+          height={18}
+          width={45}
           checkedHandleIcon={
             <div
               style={{
@@ -30,7 +30,7 @@ const SwitchButton = ({ sortPrice, setSortPrice }) => {
                 justifyContent: "center",
                 alignItems: "center",
                 height: "100%",
-                color: "#2cb1ba",
+                color: "#888888",
                 fontSize: 18,
               }}
             >
