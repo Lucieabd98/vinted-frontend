@@ -14,7 +14,7 @@ const Payment = ({ token, setToHide }) => {
   const shippinFees = price * 0.2;
   const protectFees = price * 0.1;
 
-  const total = price + 0.5 + shippinFees;
+  const total = price + protectFees + shippinFees;
 
   const amount = Number((total * 100).toFixed(0));
 
