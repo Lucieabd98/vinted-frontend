@@ -64,6 +64,7 @@ const Publish = ({ token, setToHide }) => {
                 <input
                   id="file"
                   type="file"
+                  required
                   onChange={(event) => {
                     setPicture(event.target.files[0]);
                   }}
@@ -83,6 +84,7 @@ const Publish = ({ token, setToHide }) => {
                 <textarea
                   id="title"
                   type="text"
+                  required
                   placeholder="ex: Chemise Sézane Verte"
                   onChange={(event) => {
                     setTitle(event.target.value);
@@ -94,6 +96,7 @@ const Publish = ({ token, setToHide }) => {
                 <textarea
                   id="description"
                   type="text"
+                  required
                   placeholder="ex: Porté quelques fois, taille correctement"
                   onChange={(event) => {
                     setDescription(event.target.value);
@@ -107,6 +110,7 @@ const Publish = ({ token, setToHide }) => {
                 <textarea
                   id="brand"
                   type="text"
+                  required
                   placeholder="ex: Zara"
                   onChange={(event) => {
                     setBrand(event.target.value);
@@ -118,6 +122,7 @@ const Publish = ({ token, setToHide }) => {
                 <textarea
                   id="size"
                   type="text"
+                  required
                   placeholder="ex: L/40/12"
                   onChange={(event) => {
                     setSize(event.target.value);
@@ -129,6 +134,7 @@ const Publish = ({ token, setToHide }) => {
                 <textarea
                   id="color"
                   type="text"
+                  required
                   placeholder="ex: Fushia"
                   onChange={(event) => {
                     setColor(event.target.value);
@@ -140,6 +146,7 @@ const Publish = ({ token, setToHide }) => {
                 <textarea
                   id="condition"
                   type="text"
+                  required
                   placeholder="Neuf avec étiquette"
                   onChange={(event) => {
                     setCondition(event.target.value);
@@ -151,6 +158,7 @@ const Publish = ({ token, setToHide }) => {
                 <textarea
                   id="location"
                   type="text"
+                  required
                   placeholder="ex: Paris"
                   onChange={(event) => {
                     setLocation(event.target.value);
@@ -164,7 +172,8 @@ const Publish = ({ token, setToHide }) => {
                 <input
                   id="price"
                   type="text"
-                  name=""
+                  name="price"
+                  required
                   placeholder="0,00€"
                   onChange={(event) => {
                     setPrice(event.target.value);

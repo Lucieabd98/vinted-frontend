@@ -40,6 +40,7 @@ const Login = ({ handleToken, setToHide }) => {
           type="email"
           placeholder="Adresse email"
           value={email}
+          required
           onChange={(event) => {
             setEmail(event.target.value);
           }}
@@ -49,6 +50,7 @@ const Login = ({ handleToken, setToHide }) => {
           type="password"
           placeholder="Mot de passe"
           value={password}
+          required
           onChange={(event) => {
             setPassword(event.target.value);
           }}

@@ -46,6 +46,7 @@ const Signup = ({ handleToken, setToHide }) => {
           type="text"
           placeholder="Nom d'utilisateur"
           value={username}
+          required
           onChange={(event) => {
             setUserName(event.target.value);
           }}
@@ -55,6 +56,7 @@ const Signup = ({ handleToken, setToHide }) => {
           type="email"
           placeholder="Email"
           value={email}
+          required
           onChange={(event) => {
             setEmail(event.target.value);
           }}
@@ -62,6 +64,7 @@ const Signup = ({ handleToken, setToHide }) => {
         <input
           type="password"
           placeholder="Mot de passe"
+          required
           onChange={(event) => {
             setPassword(event.target.value);
           }}
